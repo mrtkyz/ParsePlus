@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParsePlus.Web", "ParsePlus.Web\ParsePlus.Web.csproj", "{6DA8000B-737A-4713-9E7F-8A6E7A123B76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParsePlus.Web.Tests", "ParsePlus.Web.Tests\ParsePlus.Web.Tests.csproj", "{AC6263DA-F74A-4402-9366-4311C4E2B276}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParsePlus.Bll", "ParsePlus.Bll\ParsePlus.Bll.csproj", "{B8ACBB28-8ED3-4F93-803E-F0F2C957B26F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6DA8000B-737A-4713-9E7F-8A6E7A123B76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DA8000B-737A-4713-9E7F-8A6E7A123B76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DA8000B-737A-4713-9E7F-8A6E7A123B76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DA8000B-737A-4713-9E7F-8A6E7A123B76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC6263DA-F74A-4402-9366-4311C4E2B276}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC6263DA-F74A-4402-9366-4311C4E2B276}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC6263DA-F74A-4402-9366-4311C4E2B276}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC6263DA-F74A-4402-9366-4311C4E2B276}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8ACBB28-8ED3-4F93-803E-F0F2C957B26F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8ACBB28-8ED3-4F93-803E-F0F2C957B26F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8ACBB28-8ED3-4F93-803E-F0F2C957B26F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8ACBB28-8ED3-4F93-803E-F0F2C957B26F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

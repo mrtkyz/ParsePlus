@@ -1,0 +1,72 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    font: 400 13px 'Cabin', 'Helvetica Neue', 'Arial', sans-serif;
+}
+
+.form-upload {
+    padding: 0 0 0 20px;
+}
+
+.part {
+    display: inline-table;
+    width: 49.60156%;
+    border-radius: 2px;
+    border: 1px solid #ddd;
+    background-color: #f1f1f1;
+}
+
+.main {
+    margin: 0 auto;
+    width: 1000px;
+}
+
+.upload {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+.upload input.file-upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 2px;
+}
+.btn-success {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+
+.loading {
+    display: none;
+}
+.data {
+    padding: 10px;
+}

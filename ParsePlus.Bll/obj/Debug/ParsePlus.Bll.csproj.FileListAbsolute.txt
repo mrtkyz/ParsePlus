@@ -1,0 +1,5 @@
+E:\MyProjects\PRODUCTS\ParsePlus\ParsePlus.Bll\bin\Debug\ParsePlus.Bll.dll
+E:\MyProjects\PRODUCTS\ParsePlus\ParsePlus.Bll\bin\Debug\ParsePlus.Bll.pdb
+E:\MyProjects\PRODUCTS\ParsePlus\ParsePlus.Bll\obj\Debug\ParsePlus.Bll.csprojResolveAssemblyReference.cache
+E:\MyProjects\PRODUCTS\ParsePlus\ParsePlus.Bll\obj\Debug\ParsePlus.Bll.dll
+E:\MyProjects\PRODUCTS\ParsePlus\ParsePlus.Bll\obj\Debug\ParsePlus.Bll.pdb
