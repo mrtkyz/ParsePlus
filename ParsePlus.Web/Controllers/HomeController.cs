@@ -4,6 +4,7 @@ using System.Web;
 using System.Web.Mvc;
 using ParsePlus.Bll.Manager;
 using ParsePlus.Web.Views;
+using ParsePlus.Web.Models;
 
 namespace ParsePlus.Web.Controllers
 {
@@ -11,23 +12,41 @@ namespace ParsePlus.Web.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            var model = new IndexViewModel();
+            return View(model);
         }
 
         [HttpPost]
-        public JsonResult Upload(HttpPostedFileBase file)
+        public JsonResult Upload(HttpPostedFileBase file, IndexViewModel model)
         {
             var result = new XmlViewModel();
-            if (file != null && file.ContentLength > 0)
-            {
-                var fileName = DateTime.Now.ToString("ddMMyyyyhhmmssfff") + Path.GetExtension(file.FileName);
-                string path = Path.Combine(Server.MapPath("~/Assert/uploads/"), fileName);
-                file.SaveAs(path);
+            var downloadedFilePath = string.Empty;
 
-                var manager = new XmlManager();
-                result.SourceFilePath = path;
-                result.XmlNodes = manager.GetXmlNodes(path);
+            var fileManager = new FileManager();
+            var serverPath = Server.MapPath("~/Assert/uploads/");
+
+            if (!string.IsNullOrEmpty(model.SourceFileUrl))
+            {
+                downloadedFilePath = fileManager.SaveFileByUrl(serverPath, model.SourceFileUrl);
             }
+
+            if (!string.IsNullOrEmpty(model.TargetFileUrl))
+            {
+                downloadedFilePath = fileManager.SaveFileByUrl(serverPath, model.TargetFileUrl);
+            }
+
+            if (downloadedFilePath == string.Empty && file != null && file.ContentLength > 0)
+            {
+                MemoryStream target = new MemoryStream();
+                file.InputStream.CopyTo(target);
+                byte[] data = target.ToArray();
+
+                downloadedFilePath = fileManager.SaveFileByByte(serverPath, data, file.FileName);
+            }
+            
+            var manager = new XmlManager();
+            result.SourceFilePath = downloadedFilePath;
+            result.XmlNodes = manager.GetXmlNodes(downloadedFilePath);
 
             return Json(result, JsonRequestBehavior.AllowGet);
         }

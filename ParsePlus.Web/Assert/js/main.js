@@ -13,7 +13,7 @@ $(function () {
                 $.each(data.XmlNodes, function (i) {
                     dataDiv.append("<div class='tag-title'>" + data.XmlNodes[i].NodeName + "</div>");
                     $.each(data.XmlNodes[i].SubNodeList, function (k) {
-                        dataDiv.append("<div class='tag-element'>" + data.XmlNodes[i].SubNodeList[k].NodeName + "</div>");
+                        dataDiv.append("<div class='tag-element' title='Bu tag içerisindeki dataları görüntülemek için tıklayınız.'>" + data.XmlNodes[i].SubNodeList[k].NodeName + "</div>");
                     });
                 });
             }
@@ -26,11 +26,16 @@ $(function () {
             url: "/Home/GetElementValues",
             data: { sourceFilePath: $('#SourceFile').val(), elementName: $(this).html() },
             success: function (data) {
-                $('.element-values').empty();
+                $('.element-values').slideUp(function () {
+                    $(this).empty();
 
-                $.each(data, function (i) {
-                    $('.element-values').append("<div class='value'>" + data[i] + "</div>");
+                    $.each(data, function (i) {
+                        $('.element-values').append("<div class='value'>" + data[i] + "</div>");
+                    });
+
+                    $('.element-values').slideDown();
                 });
+
             },
             error: function (ex) { popup("Hata oluştu. Durum: " + ex, "Uyarı"); }
         });

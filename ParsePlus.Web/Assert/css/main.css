@@ -4,6 +4,18 @@
     font: 400 13px 'Cabin', 'Helvetica Neue', 'Arial', sans-serif;
 }
 
+input[type=text]{
+    padding:9px 5px;
+    border:1px #ccc solid;
+    border-radius:2px;
+    font: 400 12px 'Cabin', 'Helvetica Neue', 'Arial', sans-serif;
+    width:260px;
+}
+
+.source-url{
+    display:inline-block;
+}
+
 .form-upload {
     padding: 0 0 0 20px;
 }
@@ -26,6 +38,14 @@
     overflow: hidden;
     display: inline-block;
 }
+
+.source-url:before {
+    content : '&';
+    margin:10px;
+    font-size:20px;
+    font-weight:100;
+}
+
 .upload input.file-upload {
     position: absolute;
     top: 0;
@@ -57,6 +77,7 @@
     background-image: none;
     border: 1px solid transparent;
     border-radius: 2px;
+    display:inline-block;
 }
 .btn-success {
     color: #fff;
@@ -83,6 +104,7 @@
  
  .element-values{
      margin:10px;
+     display:none;
  }
  .value{
      margin:10px;

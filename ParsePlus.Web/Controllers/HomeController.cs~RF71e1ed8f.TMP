@@ -1,0 +1,56 @@
+﻿using System;
+using System.IO;
+using System.Web;
+using System.Web.Mvc;
+using ParsePlus.Bll.Manager;
+using ParsePlus.Web.Views;
+using ParsePlus.Web.Models;
+using System.Net;
+
+namespace ParsePlus.Web.Controllers
+{
+    public class HomeController : Controller
+    {
+        public ActionResult Index()
+        {
+            using (WebClient client = new WebClient())
+            {
+                var url = http://www.enetpulse.com/wp-content/uploads/2013/05/Baseball-MLB.xml;
+                var fileName = DateTime.Now.ToString("ddMMyyyyhhmmssfff") + Path.GetExtension(url);
+                client.DownloadFile(url, path);
+            }
+
+            var model = new IndexViewModel();
+            return View(model);
+        }
+
+        [HttpPost]
+        public JsonResult Upload(HttpPostedFileBase file, IndexViewModel model)
+        {
+            var result = new XmlViewModel();
+            if (file != null && file.ContentLength > 0)
+            {
+                var fileName = DateTime.Now.ToString("ddMMyyyyhhmmssfff") + Path.GetExtension(file.FileName);
+                string path = Path.Combine(Server.MapPath("~/Assert/uploads/"), fileName);
+                file.SaveAs(path);
+
+                var fileManager = new FileManager();
+                fileManager.SaveFileByByte(file.InputStream);
+
+                var manager = new XmlManager();
+                result.SourceFilePath = path;
+                result.XmlNodes = manager.GetXmlNodes(path);
+            }
+
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+        
+        public JsonResult GetElementValues(string sourceFilePath, string elementName)
+        {
+            var manager = new XmlManager();
+            var values = manager.GetElementValues(sourceFilePath, elementName);
+
+            return Json(values, JsonRequestBehavior.AllowGet);
+        }
+    }
+}

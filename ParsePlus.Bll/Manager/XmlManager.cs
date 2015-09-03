@@ -12,30 +12,29 @@ namespace ParsePlus.Bll.Manager
         {
             var list = new List<XmlNodes>();
 
-            var doc = new XmlDocument();
-            doc.Load(filePath);
-
-            foreach (XmlNode node in doc.DocumentElement)
+            if (!string.IsNullOrEmpty(filePath))
             {
-                var nodeItem = new XmlNodes
-                {
-                    NodeName = node.Name,
-                    SubNodeList = new List<XmlNodes>()
-                };
+                var doc = new XmlDocument();
+                doc.Load(filePath);
 
-                foreach (XmlNode item in node.ChildNodes)
+                foreach (XmlNode node in doc.DocumentElement)
                 {
-                    var nodee = GetNodeName(item);
-                    if (!list.Any(z => z.NodeName == nodee.NodeName) &&
-                        !nodeItem.SubNodeList.Any(z => z.NodeName == nodee.NodeName))
+                    var nodeItem = new XmlNodes
                     {
-                        nodeItem.SubNodeList.Add(nodee);
-                    }
-                }
+                        NodeName = node.Name,
+                        SubNodeList = new List<XmlNodes>()
+                    };
 
-                if (!list.Any(z => z.NodeName == node.Name) &&
-                    !list.Any(z => z.SubNodeList.Any(a => a.NodeName == node.Name)))
-                    list.Add(nodeItem);
+                    foreach (XmlNode item in node.ChildNodes)
+                    {
+                        var nodee = GetNodeName(item);
+                        if (!list.Any(z => z.NodeName == nodee.NodeName) && !nodeItem.SubNodeList.Any(z => z.NodeName == nodee.NodeName))
+                            nodeItem.SubNodeList.Add(nodee);
+                    }
+
+                    if (!list.Any(z => z.NodeName == node.Name) && !list.Any(z => z.SubNodeList.Any(a => a.NodeName == node.Name)))
+                        list.Add(nodeItem);
+                }
             }
             return list;
         }
@@ -50,9 +49,7 @@ namespace ParsePlus.Bll.Manager
             foreach (XmlNode node in doc.DocumentElement)
             {
                 foreach (XmlNode item in node.SelectNodes(elementName))
-                {
                     result.Add(item.InnerText);
-                }
             }
 
             return result;
