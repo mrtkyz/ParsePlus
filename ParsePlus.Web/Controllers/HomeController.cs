@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Web;
 using System.Web.Mvc;
-using Newtonsoft.Json;
-using ParsePlus.Bll.Dto;
 using ParsePlus.Bll.Manager;
+using ParsePlus.Web.Views;
 
 namespace ParsePlus.Web.Controllers
 {
@@ -19,7 +17,7 @@ namespace ParsePlus.Web.Controllers
         [HttpPost]
         public JsonResult Upload(HttpPostedFileBase file)
         {
-            var result = new List<XmlNodes>();
+            var result = new XmlViewModel();
             if (file != null && file.ContentLength > 0)
             {
                 var fileName = DateTime.Now.ToString("ddMMyyyyhhmmssfff") + Path.GetExtension(file.FileName);
@@ -27,10 +25,19 @@ namespace ParsePlus.Web.Controllers
                 file.SaveAs(path);
 
                 var manager = new XmlManager();
-                result = manager.GetXmlNodes(path);
+                result.SourceFilePath = path;
+                result.XmlNodes = manager.GetXmlNodes(path);
             }
 
             return Json(result, JsonRequestBehavior.AllowGet);
+        }
+        
+        public JsonResult GetElementValues(string sourceFilePath, string elementName)
+        {
+            var manager = new XmlManager();
+            var values = manager.GetElementValues(sourceFilePath, elementName);
+
+            return Json(values, JsonRequestBehavior.AllowGet);
         }
     }
 }

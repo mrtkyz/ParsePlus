@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParsePlus.Web", "ParsePlus.Web\ParsePlus.Web.csproj", "{6DA8000B-737A-4713-9E7F-8A6E7A123B76}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParsePlus.Web.Tests", "ParsePlus.Web.Tests\ParsePlus.Web.Tests.csproj", "{AC6263DA-F74A-4402-9366-4311C4E2B276}"

@@ -70,3 +70,20 @@
 .data {
     padding: 10px;
 }
+
+ .tag-title{
+     font-weight:bold;
+     margin:0 0 10px 0;
+ }
+ .tag-element{
+     font-weight:100;
+     margin:0 0 10px 10px;
+     cursor:pointer;
+ }
+ 
+ .element-values{
+     margin:10px;
+ }
+ .value{
+     margin:10px;
+ }

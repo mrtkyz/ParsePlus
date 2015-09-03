@@ -13,7 +13,8 @@
         <div class="loading"></div>
     }
     <div class="data"></div>
-    
+    @Html.Hidden("SourceFile")
+    <div class="element-values"></div>
 </div>
 <div class="target part">
     @using (Html.BeginForm("Upload", "Home", FormMethod.Post,

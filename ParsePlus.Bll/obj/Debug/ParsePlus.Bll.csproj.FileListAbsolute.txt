@@ -3,3 +3,8 @@ E:\MyProjects\PRODUCTS\ParsePlus\ParsePlus.Bll\bin\Debug\ParsePlus.Bll.pdb
 E:\MyProjects\PRODUCTS\ParsePlus\ParsePlus.Bll\obj\Debug\ParsePlus.Bll.csprojResolveAssemblyReference.cache
 E:\MyProjects\PRODUCTS\ParsePlus\ParsePlus.Bll\obj\Debug\ParsePlus.Bll.dll
 E:\MyProjects\PRODUCTS\ParsePlus\ParsePlus.Bll\obj\Debug\ParsePlus.Bll.pdb
+C:\Users\makyuz\Source\Repos\ParsePlus\ParsePlus.Bll\bin\Debug\ParsePlus.Bll.dll
+C:\Users\makyuz\Source\Repos\ParsePlus\ParsePlus.Bll\bin\Debug\ParsePlus.Bll.pdb
+C:\Users\makyuz\Source\Repos\ParsePlus\ParsePlus.Bll\obj\Debug\ParsePlus.Bll.csprojResolveAssemblyReference.cache
+C:\Users\makyuz\Source\Repos\ParsePlus\ParsePlus.Bll\obj\Debug\ParsePlus.Bll.dll
+C:\Users\makyuz\Source\Repos\ParsePlus\ParsePlus.Bll\obj\Debug\ParsePlus.Bll.pdb

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Xml;
 using ParsePlus.Bll.Dto;
@@ -37,6 +38,24 @@ namespace ParsePlus.Bll.Manager
                     list.Add(nodeItem);
             }
             return list;
+        }
+
+        public List<string> GetElementValues(string sourceFilePath, string elementName)
+        {
+            var doc = new XmlDocument();
+            doc.Load(sourceFilePath);
+
+            var result = new List<string>();
+
+            foreach (XmlNode node in doc.DocumentElement)
+            {
+                foreach (XmlNode item in node.SelectNodes(elementName))
+                {
+                    result.Add(item.InnerText);
+                }
+            }
+
+            return result;
         }
 
         private XmlNodes GetNodeName(XmlNode node)

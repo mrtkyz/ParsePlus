@@ -23,14 +23,13 @@ $(function () {
 
     $('body').on("click", ".data .tag-element", function () {
         $.ajax({
-            url: "/Home/GetElementValues",
-            data: { sourceFilePath: $('#SourceFile').val(), elementName: $(this).html() },
+            url: "/home/",
+            data: { id: id },
             success: function (data) {
-                $('.element-values').empty();
-
-                $.each(data, function (i) {
-                    $('.element-values').append("<div class='value'>" + data[i] + "</div>");
-                });
+                var stil = data == "True" ? "t2" : "t3";
+                var exstil = data == "True" ? "t3" : "t2";
+                $("#syfList #" + id).removeClass(exstil).addClass(stil).fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn();
+                $("#syfList #" + id + " .SyfDurum_" + id).html(data == "True" ? "Aktif" : "Pasif");
             },
             error: function (ex) { popup("Hata oluştu. Durum: " + ex, "Uyarı"); }
         });
