@@ -1,0 +1,49 @@
+﻿@model ParsePlus.Web.Models.IndexViewModel
+
+<h3>Upload File and Parse</h3>
+
+<div class="source part">
+    @using (Html.BeginForm("Upload", "Home", FormMethod.Post,
+        new { @class = "form-upload", enctype = "multipart/form-data" }))
+    {
+        <h4>Select Source File (Xml or Excel File)</h4>
+        <div class="upload btn btn-success">
+            <span>Upload</span>
+            <input type="file" class="file-upload" name="file" />
+        </div>
+
+        <div class="source-url">
+            @Html.TextBoxFor(z=>z.SourceFileUrl, new { placeholder = "Kaynak dosyanızın url adresini giriniz." })
+
+            <input type="submit" value="Upload" class="upload btn btn-success" />
+        </div>
+        <div class="loading"></div>
+    }
+    <div class="data">
+
+    </div>
+    @Html.Hidden("SourceFile")
+    <div class="element-values">
+
+    </div>
+</div>
+<div class="target part">
+    @using (Html.BeginForm("Upload", "Home", FormMethod.Post,
+        new { @class = "form-upload", enctype = "multipart/form-data" }))
+    {
+        <h4>Select Target File (Xml or Excel File)</h4>
+        <div class="upload btn btn-success">
+            <span>Upload</span>
+            <input type="file" class="file-upload" name="file" />
+        </div>
+
+        <div class="source-url">
+            @Html.TextBoxFor(z => z.TargetFileUrl, new { placeholder = "Kaynak dosyanızın url adresini giriniz." })
+
+            <input type="submit" value="Upload" class="upload btn btn-success" />
+        </div>
+        <div class="loading"></div>
+    }
+    <div class="data"></div>
+
+</div>

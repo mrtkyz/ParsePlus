@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>sample.com.tr</id>
+    <version>1.1.0.9</version>
+    <authors>SYSTEM</authors>
+    <owners>SYSTEM</owners>
+    <licenseUrl>http://example.com</licenseUrl>
+    <projectUrl>http://example.com</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>The ParsePlus.Web deployment package, built on 10/12/2015</description>
+    <releaseNotes />
+  </metadata>
+</package>
