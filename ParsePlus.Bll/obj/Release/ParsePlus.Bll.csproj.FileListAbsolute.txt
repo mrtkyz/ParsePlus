@@ -1,5 +1,0 @@
-C:\Users\makyuz\Source\Repos\ParsePlus\ParsePlus.Bll\bin\Release\ParsePlus.Bll.dll
-C:\Users\makyuz\Source\Repos\ParsePlus\ParsePlus.Bll\bin\Release\ParsePlus.Bll.pdb
-C:\Users\makyuz\Source\Repos\ParsePlus\ParsePlus.Bll\obj\Release\ParsePlus.Bll.csprojResolveAssemblyReference.cache
-C:\Users\makyuz\Source\Repos\ParsePlus\ParsePlus.Bll\obj\Release\ParsePlus.Bll.dll
-C:\Users\makyuz\Source\Repos\ParsePlus\ParsePlus.Bll\obj\Release\ParsePlus.Bll.pdb
