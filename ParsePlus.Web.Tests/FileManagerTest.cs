@@ -1,12 +1,12 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using NUnit.Framework;
 using ParsePlus.Bll.Manager;
 
 namespace ParsePlus.Web.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class FileManagerTest
     {
-        [TestMethod]
+        [Test]
         public void File_Must_Extesion_Xml()
         {
             FileManager fileManager = new FileManager();
@@ -16,7 +16,7 @@ namespace ParsePlus.Web.Tests
             Assert.AreEqual(extension, true);
         }
 
-        [TestMethod]
+        [Test]
         public void File_Must_Extesion_Excel()
         {
             FileManager fileManager = new FileManager();
