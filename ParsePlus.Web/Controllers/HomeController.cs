@@ -32,7 +32,7 @@ namespace ParsePlus.Web.Controllers
             if (!string.IsNullOrEmpty(model.TargetFileUrl))
             {
                 downloadedFilePath = fileManager.SaveFileByUrl(serverPath, model.TargetFileUrl);
-            }
+            }   
 
             if (downloadedFilePath == string.Empty && file != null && file.ContentLength > 0)
             {
